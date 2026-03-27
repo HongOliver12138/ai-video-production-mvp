@@ -1,0 +1,217 @@
+{
+  "jobId": "ditto-demo",
+  "referenceVideoId": "ditto_demo_001",
+  "createdAt": "2026-03-25T00:00:00Z",
+
+  "packageMeta": {
+    "selectedProductionPattern": "human_anchor_hybrid_explainer",
+    "zeroCreatorShootPossible": false,
+    "creatorCaptureRequired": true,
+    "totalSegments": 5,
+    "aiSegmentCount": 3,
+    "captureTaskCount": 2,
+    "packageSummary": "human anchor hybrid explainer pattern. 3 AI segment(s), 2 capture task(s). ~6s total creator capture."
+  },
+
+  "aiSegments": [
+    {
+      "segmentId": "seg_2",
+      "narrativeRole": "problem",
+      "method": "text-led pain point sequence with AI narration",
+      "requiredInputs": ["Brand copy, logo, and color palette"],
+      "outputForm": "ai composed segment",
+      "readinessStatus": "pending_assets"
+    },
+    {
+      "segmentId": "seg_3",
+      "narrativeRole": "solution_reveal",
+      "method": "branded motion-card reveal using product screenshots and key messaging",
+      "requiredInputs": [
+        "Product UI screenshots or app screen recordings",
+        "Finalized script or key messaging for motion graphics"
+      ],
+      "outputForm": "ai composed segment",
+      "readinessStatus": "pending_assets"
+    },
+    {
+      "segmentId": "seg_4",
+      "narrativeRole": "how_it_works",
+      "method": "UI walkthrough with AI voiceover narration",
+      "requiredInputs": [
+        "Product UI screenshots or app screen recordings"
+      ],
+      "outputForm": "ai composed segment",
+      "readinessStatus": "pending_assets"
+    }
+  ],
+
+  "captureTasks": {
+    "taskCards": [
+      {
+        "taskId": "task_hook",
+        "segmentId": "seg_1",
+        "narrativeRole": "hook",
+        "taskType": "reaction_hook",
+        "taskObjective": "establish an authentic human opening beat before AI content",
+        "exactAction": "Look at the camera with an excited expression and say: Okay, real talk. I didn't think campus dating could be this easy.",
+        "durationLimitSeconds": 3,
+        "framingInstruction": "chest-up, front-facing, stable camera, neutral background",
+        "deliveryMode": "spoken_line",
+        "acceptanceCriteria": [
+          "lighting sufficient",
+          "no major camera shake",
+          "face clearly visible",
+          "expression reads naturally on camera",
+          "spoken line clearly audible"
+        ],
+        "retakeHints": [
+          "make expression slightly stronger if it reads flat",
+          "keep energy high — this is the hook"
+        ],
+        "priority": "required",
+        "estimatedEffort": "very_low"
+      },
+      {
+        "taskId": "task_cta",
+        "segmentId": "seg_5",
+        "narrativeRole": "cta",
+        "taskType": "short_cta_close",
+        "taskObjective": "add a human CTA close after AI explanation",
+        "exactAction": "Look at the camera, smile, and say: Try it yourself — link in bio!",
+        "durationLimitSeconds": 3,
+        "framingInstruction": "chest-up, front-facing, friendly expression, stable camera",
+        "deliveryMode": "spoken_line",
+        "acceptanceCriteria": [
+          "lighting sufficient",
+          "no major camera shake",
+          "spoken line clearly audible",
+          "line completed within duration limit",
+          "face clearly visible"
+        ],
+        "retakeHints": [
+          "smile more naturally",
+          "keep the line shorter if over duration"
+        ],
+        "priority": "required",
+        "estimatedEffort": "very_low"
+      }
+    ],
+    "taskSummary": {
+      "totalTasks": 2,
+      "totalEstimatedCaptureSeconds": 6,
+      "creatorBurdenEstimate": "very_low",
+      "requiresProductInHand": false,
+      "anchorStrategy": "human_open_and_close",
+      "summary": "2 capture task(s), ~6s total. Anchor: human open and close. Creator burden: very_low."
+    }
+  },
+
+  "sharedAssets": {
+    "required": [
+      "Brand copy, logo, and color palette",
+      "Product UI screenshots or app screen recordings",
+      "Finalized script or key messaging for motion graphics"
+    ],
+    "optional": [
+      "brand style guide",
+      "brand sound/music cues"
+    ],
+    "firstToCollect": [
+      "Product UI screenshots or app screen recordings",
+      "Brand copy, logo, and color palette"
+    ]
+  },
+
+  "assemblyPlan": {
+    "openingStrategy": "human hook beat (2-3s) to establish authenticity, then transition to AI content",
+    "middleStrategy": "AI-led content: text-led pain point with narration; motion-card product reveal; UI walkthrough with voiceover",
+    "closingStrategy": "short human CTA close (2-3s)",
+    "compositionNotes": "keep human anchor clips under 3 seconds, use consistent framing for open/close, crossfade between human and AI segments"
+  },
+
+  "renderSpec": {
+    "compositionPattern": "human_anchor_hybrid_explainer",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "totalDurationSec": 20,
+    "renderSummary": "human hook open, AI-led middle explanation, human CTA close",
+    "scenes": [
+      {
+        "sceneId": "scene_1",
+        "segmentId": "seg_1",
+        "purpose": "human_hook",
+        "durationSec": 3,
+        "visualType": "captured_video",
+        "assetRefs": { "required": ["hook_video"], "optional": ["captions_json"] },
+        "voiceoverMode": "embedded_original",
+        "voiceoverText": "Okay, real talk. I didn't think campus dating could be this easy.",
+        "subtitleText": "Okay, real talk. I didn't think campus dating could be this easy.",
+        "layoutHint": "full_screen_video",
+        "sceneNotes": "keep under 3s; establish authenticity immediately"
+      },
+      {
+        "sceneId": "scene_2",
+        "segmentId": "seg_2",
+        "purpose": "problem_packaging",
+        "durationSec": 4,
+        "visualType": "text_motion",
+        "assetRefs": { "required": ["brand_assets", "brand_copy"], "optional": ["voiceover_audio", "captions_json"] },
+        "voiceoverMode": "tts",
+        "voiceoverText": "Finding the perfect date spot on campus is a nightmare. Between classes, clubs, and studying, who has time to plan something special?",
+        "subtitleText": "Finding the perfect date spot on campus is a nightmare. Between classes, clubs, and studying, who has time to plan something special?",
+        "layoutHint": "text_over_background",
+        "sceneNotes": "prioritize clarity over visual density"
+      },
+      {
+        "sceneId": "scene_3",
+        "segmentId": "seg_3",
+        "purpose": "solution_reveal",
+        "durationSec": 4,
+        "visualType": "motion_graphic_card",
+        "assetRefs": { "required": ["product_screenshots", "brand_copy"], "optional": ["voiceover_audio", "captions_json", "brand_assets"] },
+        "voiceoverMode": "tts",
+        "voiceoverText": "Ditto is insane. One search, and it finds the best date ideas near you, perfectly matched to your vibe.",
+        "subtitleText": "Ditto is insane. One search, and it finds the best date ideas near you, perfectly matched to your vibe.",
+        "layoutHint": "text_over_background",
+        "sceneNotes": "bold typography, brand palette"
+      },
+      {
+        "sceneId": "scene_4",
+        "segmentId": "seg_4",
+        "purpose": "product_explainer",
+        "durationSec": 6,
+        "visualType": "ui_walkthrough",
+        "assetRefs": { "required": ["product_screenshots"], "optional": ["voiceover_audio", "captions_json", "brand_assets"] },
+        "voiceoverMode": "tts",
+        "voiceoverText": "You just type it in your browser, tell Ditto what you're into, and boom — curated date plans, time slots, even reservation links. All in under 30 seconds.",
+        "subtitleText": "You just type it in your browser, tell Ditto what you're into, and boom — curated date plans, time slots, even reservation links. All in under 30 seconds.",
+        "layoutHint": "ui_demo_flow",
+        "sceneNotes": "use 2-3 screenshots max, keep pacing tight"
+      },
+      {
+        "sceneId": "scene_5",
+        "segmentId": "seg_5",
+        "purpose": "human_cta",
+        "durationSec": 3,
+        "visualType": "captured_video",
+        "assetRefs": { "required": ["cta_video"], "optional": ["captions_json"] },
+        "voiceoverMode": "embedded_original",
+        "voiceoverText": "Try it yourself — link in bio!",
+        "subtitleText": "Try it yourself — link in bio!",
+        "layoutHint": "full_screen_video",
+        "sceneNotes": "keep under 3s; friendly energy, clear action"
+      }
+    ]
+  },
+
+  "assetMap": {
+    "hook_video": "part1.MOV",
+    "cta_video": "part2.MOV",
+    "brand_assets": "brand_logo.png",
+    "brand_copy": "brand_copy.txt",
+    "product_screenshots": "screenshot_1.png",
+    "voiceover_audio": "voiceover.mp3",
+    "captions_json": "captions.json"
+  }
+}

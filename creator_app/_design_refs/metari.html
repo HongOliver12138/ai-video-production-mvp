@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator App - Supply Materials</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background-color: #e5e7eb; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .mobile-frame { width: 390px; height: 844px; background: #ffffff; border-radius: 40px; overflow: hidden; position: relative; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); border: 8px solid #1f2937; }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        /* 虚线槽位特效 */
+        .dash-slot { border: 2px dashed #d1d5db; transition: all 0.2s; cursor: pointer; }
+        .dash-slot:hover { border-color: #9ca3af; background-color: #f9fafb; }
+    </style>
+</head>
+<body>
+
+<div class="mobile-frame flex flex-col hide-scroll">
+    
+    <div class="h-12 w-full flex justify-between items-center px-6 pt-2">
+        <span class="text-sm font-semibold">09:41</span>
+        <div class="flex space-x-1"><div class="w-4 h-4 bg-black rounded-full"></div></div>
+    </div>
+
+    <div class="flex-1 px-6 pt-4 pb-24 overflow-y-auto">
+        <div class="flex items-center space-x-2 mb-6">
+            <div class="w-6 h-6 bg-gray-200 rounded-full flex items-center justify-center text-xs">🧴</div>
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider">CBD Luxury Basket</span>
+        </div>
+
+        <h1 class="text-2xl font-bold text-gray-900 mb-2">We need 2 quick clips</h1>
+        <p class="text-gray-500 text-sm mb-8">No heavy editing needed. Just raw footage. Our AI will stitch it together.</p>
+
+        <div class="dash-slot rounded-3xl p-5 mb-5 relative overflow-hidden group">
+            <div class="absolute top-4 right-4 w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+            
+            <div class="flex items-start space-x-4">
+                <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-xl shrink-0">🙋‍♀️</div>
+                <div>
+                    <h3 class="font-bold text-gray-900 mb-1">1. Talking Head (15s)</h3>
+                    <p class="text-xs text-gray-500 mb-3 leading-relaxed">Face a window for natural light. Hold the product. Just say honestly what you liked about it.</p>
+                    <div class="bg-blue-50 border border-blue-100 rounded-lg p-2 flex items-start space-x-2">
+                        <svg class="w-4 h-4 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span class="text-[10px] text-blue-700 font-medium">Keywords: "Vegan", "Not greasy"</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 flex justify-end">
+                <div class="bg-black text-white text-xs font-bold px-4 py-2 rounded-full flex items-center space-x-1">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <span>Add Clip</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="dash-slot rounded-3xl p-5 mb-8">
+            <div class="flex items-start space-x-4">
+                <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-xl shrink-0">✨</div>
+                <div>
+                    <h3 class="font-bold text-gray-900 mb-1">2. Texture Shot (3-5s)</h3>
+                    <p class="text-xs text-gray-500 mb-2">A close-up showing the lotion texture on your hand.</p>
+                </div>
+            </div>
+            <div class="mt-2 flex justify-end">
+                <div class="bg-gray-200 text-gray-700 text-xs font-bold px-4 py-2 rounded-full">
+                    Add Clip
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="absolute bottom-0 w-full bg-white border-t border-gray-100 p-6 pt-4 pb-8">
+        <button class="w-full bg-gray-200 text-gray-400 font-bold py-4 rounded-2xl text-lg cursor-not-allowed transition-colors">
+            Upload & Let AI Edit
+        </button>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "jobId": "ditto-demo",
+  "status": "awaiting_capture",
+  "captureProgress": {
+    "totalTasks": 2,
+    "completedTasks": 0,
+    "taskStatus": {
+      "task_hook": "pending",
+      "task_cta": "pending"
+    }
+  },
+  "audio": {
+    "ttsText": null,
+    "voiceoverFile": null,
+    "captionsFile": null,
+    "pipelineComplete": false
+  },
+  "render": {
+    "outputFile": null,
+    "remotionSpecFile": null
+  },
+  "updatedAt": "2026-03-25T00:00:00Z"
+}

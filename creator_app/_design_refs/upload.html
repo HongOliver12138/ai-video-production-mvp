@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator App - Publish Flow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', -apple-system, sans-serif; -webkit-font-smoothing: antialiased; background-color: #E5E7EB; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .mobile-frame { width: 390px; height: 844px; background: #FAFAFA; border-radius: 40px; overflow: hidden; position: relative; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3); border: 8px solid #111827; display: flex; flex-direction: column; }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .premium-shadow { box-shadow: 0 4px 24px -6px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+
+<div class="mobile-frame hide-scroll">
+
+    <div class="h-12 w-full flex justify-between items-center px-6 pt-2 bg-[#FAFAFA]">
+        <span class="text-[15px] font-semibold text-black tracking-tight">21:12</span>
+        <div class="flex space-x-1"><div class="w-4 h-4 bg-black rounded-full"></div></div>
+    </div>
+
+    <div class="px-6 pt-5 pb-3">
+        <div class="flex items-center space-x-2 mb-2">
+            <div class="w-6 h-6 bg-[#ECFDF5] rounded-full flex items-center justify-center">
+                <svg class="w-4 h-4 text-[#059669]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <span class="text-[13px] font-semibold text-[#059669] uppercase tracking-wider">Video Approved</span>
+        </div>
+        <h1 class="text-[28px] font-semibold text-[#111827] tracking-tight mb-1">Ready to post</h1>
+        <p class="text-[14px] text-[#6B7280] font-normal leading-relaxed">System has prepared the caption. Just tap to publish and get paid.</p>
+    </div>
+
+    <div class="flex-1 px-5 pt-3 pb-28 overflow-y-auto">
+        
+        <div class="bg-white rounded-[24px] p-5 premium-shadow relative mb-6">
+            
+            <div class="flex items-center space-x-3 pb-4 border-b border-[#F3F4F6] mb-4">
+                <div class="w-10 h-10 bg-black rounded-full flex items-center justify-center shrink-0">
+                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+                </div>
+                <div>
+                    <p class="text-[11px] text-[#9CA3AF] font-semibold uppercase tracking-wider">Posting to</p>
+                    <p class="text-[15px] font-medium text-[#111827]">@coba_daughter</p>
+                </div>
+            </div>
+
+            <div class="bg-[#F9FAFB] rounded-[16px] p-4 border border-[#F3F4F6]">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-[11px] font-semibold text-[#6B7280] uppercase tracking-wider">Caption & Tags</span>
+                    <span class="text-[10px] bg-[#E5E7EB] text-[#4B5563] px-2 py-0.5 rounded-full font-bold tracking-wider">LOCKED</span>
+                </div>
+                <p class="text-[14px] text-[#4B5563] leading-relaxed mb-3">
+                    Okay, if your skin feels like sandpaper right now, you need this CBD lotion. It literally saved my dry skin and absorbs instantly. ✨ 
+                    <br><br>
+                    <span class="text-[#2563EB]">#skincare #cbdlotion #veganbeauty #whitsundayboho</span>
+                </p>
+                
+                <div class="flex items-center space-x-3 bg-white p-2.5 rounded-[12px] border border-[#E5E7EB] shadow-sm">
+                    <div class="w-10 h-10 bg-[#F3F4F6] rounded-lg overflow-hidden shrink-0">
+                        <img src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=100&auto=format&fit=crop" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-[12px] font-semibold text-[#111827] truncate">Luxury Rattan Basket Set</p>
+                        <p class="text-[11px] text-[#6B7280]">Linked in video</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="absolute bottom-0 w-full bg-white/95 backdrop-blur-md border-t border-[#F3F4F6] p-6 pt-5 pb-8 z-20">
+        <button class="w-full bg-[#111827] text-white font-medium py-[16px] rounded-[18px] text-[16px] hover:bg-black transition-colors flex justify-center items-center space-x-2 premium-shadow mb-3">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+            <span>Publish to TikTok</span>
+        </button>
+        <p class="text-center text-[12px] text-[#9CA3AF] font-medium">Earnings will be unlocked immediately after posting.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

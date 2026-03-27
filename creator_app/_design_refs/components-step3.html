@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator App - UI Components (Step 3)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #f3f4f6; padding: 2rem; }
+        .component-section { margin-bottom: 4rem; }
+        .mobile-container { width: 390px; margin-top: 1rem; position: relative; overflow: hidden; background: white; border-radius: 32px; border: 1px solid #e5e7eb; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        .section-title { font-size: 1.25rem; font-weight: 700; color: #111827; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; margin-bottom: 0.5rem; }
+        .note { font-size: 0.85rem; color: #6b7280; margin-bottom: 1.5rem; line-height: 1.5; }
+    </style>
+</head>
+<body>
+
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-2">UI Component Library - Phase 3</h1>
+        <p class="text-gray-500 mb-8">Drawers & Modals: Handling edge cases without adding cognitive load.</p>
+
+        <div class="component-section">
+            <h2 class="section-title">1. Feedback Drawer (标签化反馈抽屉)</h2>
+            <p class="note">场景：当达人对 AI 草稿不满意时从底部滑出。绝对禁止文本输入框，全部用标签代替，一键重写。</p>
+            
+            <div class="mobile-container h-[400px] bg-gray-100 flex items-end">
+                <div class="w-full bg-white rounded-t-[32px] shadow-[0_-10px_40px_rgba(0,0,0,0.1)] pt-6 px-6 pb-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-xl font-bold text-gray-900">What should AI adjust?</h3>
+                        <div class="w-8 h-8 bg-gray-100 rounded-full flex justify-center items-center text-gray-500 cursor-pointer hover:bg-gray-200">✕</div>
+                    </div>
+                    
+                    <p class="text-xs text-gray-500 mb-4">Tap to instantly rewrite the script.</p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="bg-gray-50 border border-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium cursor-pointer hover:bg-black hover:text-white transition-colors">🔥 More hyped</span>
+                        <span class="bg-gray-50 border border-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium cursor-pointer hover:bg-black hover:text-white transition-colors">🧘‍♀️ Sound calm</span>
+                        <span class="bg-black text-white px-4 py-2 rounded-full text-sm font-medium cursor-pointer shadow-md">⏱️ Make it shorter</span> <span class="bg-gray-50 border border-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium cursor-pointer hover:bg-black hover:text-white transition-colors">💰 Focus on price</span>
+                    </div>
+
+                    <button class="w-full bg-black text-white font-bold py-4 rounded-2xl text-lg hover:bg-gray-800 transition-colors shadow-lg">
+                        Rewrite Script
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="component-section">
+            <h2 class="section-title">2. Calm Empty State (情绪降温空状态)</h2>
+            <p class="note">场景：当没有任何待办任务时，不要给达人显示“暂无数据”这种冰冷的提示，也不要引导他们去“找活干”。告诉他们：系统在赚钱，你去休息。</p>
+            
+            <div class="mobile-container h-[400px] flex flex-col items-center justify-center p-8 text-center bg-white">
+                <div class="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center text-3xl mb-6 shadow-inner border border-gray-100">
+                    ☕️
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">You're all caught up</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-8">
+                    Relax. The AI is currently pitching your profile to 3 new brands. We'll ping you when there's a match.
+                </p>
+                <div class="inline-flex items-center space-x-2 bg-gray-100 px-4 py-2 rounded-full">
+                    <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span class="text-xs font-bold text-gray-600 uppercase tracking-wider">System Active</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="component-section">
+            <h2 class="section-title">3. Toast Notification (顶部轻提示)</h2>
+            <p class="note">场景：完成一个动作（如点击 Accept 或 Approve）后，提供极其轻量、非阻断式的正向反馈。</p>
+            
+            <div class="mobile-container h-[200px] bg-gray-50 relative pt-6 px-4">
+                <div class="bg-gray-900 text-white px-5 py-3 rounded-full shadow-xl flex items-center space-x-3 w-max mx-auto mb-4">
+                    <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <span class="text-sm font-medium">Draft approved! System taking over.</span>
+                </div>
+
+                <div class="bg-white border border-gray-200 text-gray-800 px-5 py-3 rounded-full shadow-lg flex items-center space-x-3 w-max mx-auto">
+                    <svg class="w-5 h-5 text-purple-500 animate-spin" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <span class="text-sm font-medium">AI is generating your script...</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

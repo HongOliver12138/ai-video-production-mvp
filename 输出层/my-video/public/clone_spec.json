@@ -1,0 +1,50 @@
+{
+  "specVersion": "1.0",
+  "videoId": "ditto-clone-mvp",
+  "title": "Ditto Campus Dating — Clone MVP",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "sceneId": "scene_1",
+      "label": "hook — Okay, real talk. I didn't think campus d...",
+      "role": "hook",
+      "durationSec": 4.38,
+      "visualType": "captured_video",
+      "audioStrategy": "tts",
+      "assetRefs": [
+        "part1.MOV"
+      ],
+      "subtitleText": "Okay, real talk. I didn't think campus dating could be this easy."
+    },
+    {
+      "sceneId": "scene_2",
+      "label": "solution_reveal — Ditto is insane!...",
+      "role": "solution_reveal",
+      "durationSec": 2.2,
+      "visualType": "captured_video",
+      "audioStrategy": "tts",
+      "assetRefs": [
+        "b_roll.MOV"
+      ],
+      "subtitleText": "Ditto is insane!"
+    },
+    {
+      "sceneId": "scene_3",
+      "label": "how_it_works — You just type it in your browser, and it...",
+      "role": "how_it_works",
+      "durationSec": 3.64,
+      "visualType": "captured_video",
+      "audioStrategy": "tts",
+      "assetRefs": [
+        "part2.MOV"
+      ],
+      "subtitleText": "You just type it in your browser, and it plans the whole date for you!"
+    }
+  ],
+  "audio": {
+    "voiceoverFile": "voiceover.mp3",
+    "captionsFile": "captions.json"
+  }
+}

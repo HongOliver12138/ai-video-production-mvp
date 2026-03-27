@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator App - AI Adapted Reference</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background-color: #e5e7eb; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .mobile-frame { width: 390px; height: 844px; background: #ffffff; border-radius: 40px; overflow: hidden; position: relative; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); border: 8px solid #1f2937; }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body>
+
+<div class="mobile-frame flex flex-col hide-scroll">
+
+    <div class="h-12 w-full flex justify-between items-center px-6 pt-2">
+        <span class="text-sm font-semibold text-black">11:15</span>
+    </div>
+
+    <div class="flex-1 px-6 pt-4 pb-24 overflow-y-auto">
+        <h1 class="text-2xl font-bold text-gray-900 mb-1">Your shooting guide</h1>
+        <p class="text-gray-500 text-sm mb-6">We adapted the brand's concept to match your style.</p>
+
+        <div class="mb-6">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">1. The Vibe (Reference)</span>
+                <span class="text-[10px] bg-gray-100 text-gray-500 px-2 py-1 rounded">Watch once</span>
+            </div>
+            <div class="w-full aspect-[16/9] bg-gray-900 rounded-2xl relative overflow-hidden flex items-center justify-center">
+                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=800&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-60">
+                <div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center cursor-pointer hover:bg-white/30 transition-colors">
+                    <svg class="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+            </div>
+            <p class="text-xs text-gray-500 mt-2">Notice the fast pacing and the bright natural light.</p>
+        </div>
+
+        <div>
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">2. Your Adapted Lines</span>
+                <span class="text-[10px] bg-purple-100 text-purple-700 font-bold px-2 py-1 rounded">AI Customized</span>
+            </div>
+            
+            <div class="bg-purple-50 border border-purple-100 rounded-2xl p-5 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-purple-200 to-transparent opacity-50 rounded-bl-3xl"></div>
+                
+                <p class="text-sm text-purple-900 font-medium leading-relaxed mb-4">
+                    The reference says "Best product ever", but your audience likes honesty. So we tweaked your hook to:
+                </p>
+                
+                <div class="bg-white rounded-xl p-4 shadow-sm border border-purple-100/50">
+                    <p class="text-lg text-gray-900 font-bold leading-snug">"Okay, I was skeptical about this CBD lotion, but look at this texture."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute bottom-0 w-full bg-white border-t border-gray-100 p-6 pt-4 pb-8 z-10">
+        <button class="w-full bg-black text-white font-bold py-4 rounded-2xl text-lg hover:bg-gray-800 transition-colors shadow-xl flex justify-center items-center space-x-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            <span>Start Shooting (15s)</span>
+        </button>
+    </div>
+
+</div>
+
+</body>
+</html>

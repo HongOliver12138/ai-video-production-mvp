@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator App - Guided Camera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background-color: #111; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .mobile-frame { width: 390px; height: 844px; background: #000; border-radius: 40px; overflow: hidden; position: relative; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); border: 8px solid #1f2937; }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        
+        /* 模拟相机取景器的背景模糊和暗角 */
+        .camera-view {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=800&auto=format&fit=crop') center/cover;
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0;
+            filter: brightness(0.8);
+        }
+        
+        /* 人像辅助线 (Ghost framing) */
+        .framing-guide {
+            position: absolute; top: 20%; left: 15%; right: 15%; bottom: 30%;
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 100px 100px 40px 40px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="mobile-frame flex flex-col hide-scroll text-white">
+    
+    <div class="camera-view"></div>
+    
+    <div class="framing-guide"></div>
+
+    <div class="relative z-10 flex flex-col h-full">
+        
+        <div class="pt-14 px-6 flex justify-between items-center">
+            <button class="w-10 h-10 bg-black/40 backdrop-blur-md rounded-full flex justify-center items-center">
+                <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <div class="bg-black/40 backdrop-blur-md px-4 py-1.5 rounded-full flex items-center space-x-2">
+                <span class="text-xs font-bold text-gray-300">Clip 1 of 2</span>
+            </div>
+            
+            <div class="w-10 h-10"></div> </div>
+
+        <div class="mt-4 px-6 flex flex-col items-center">
+            
+            <div class="bg-yellow-500/90 text-yellow-50 backdrop-blur-md px-4 py-2 rounded-xl flex items-center space-x-2 shadow-lg mb-6 animate-pulse">
+                <span class="text-lg">☀️</span>
+                <span class="text-xs font-bold tracking-wide">FACE A WINDOW. NO BACKLIGHT.</span>
+            </div>
+
+            <div class="w-full bg-black/60 backdrop-blur-lg rounded-2xl p-4 border border-white/10 text-center shadow-2xl">
+                <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-2">Say something like</p>
+                <p class="text-lg font-medium leading-snug">"This CBD lotion <span class="text-green-400 font-bold">completely saved</span> my dry skin. It's <span class="text-green-400 font-bold">100% Vegan</span>."</p>
+            </div>
+        </div>
+
+        <div class="flex-1"></div>
+
+        <div class="pb-12 px-6 flex flex-col items-center">
+            
+            <div class="mb-6 bg-black/50 px-3 py-1 rounded-full border border-white/20">
+                <p class="text-xs text-white font-medium flex items-center">
+                    <span class="w-2 h-2 bg-red-500 rounded-full mr-2 animate-pulse"></span>
+                    Max 15 seconds
+                </p>
+            </div>
+
+            <div class="relative w-24 h-24 flex items-center justify-center cursor-pointer hover:scale-105 transition-transform">
+                <div class="absolute inset-0 rounded-full border-4 border-white/30"></div>
+                <div class="w-16 h-16 bg-red-500 rounded-full shadow-[0_0_20px_rgba(239,68,68,0.5)]"></div>
+            </div>
+
+            <p class="mt-6 text-sm text-gray-400 font-medium">Tap to start recording</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
