@@ -8,6 +8,7 @@ import {
   type CreatorTask,
   type Summary,
   type PipelineResult,
+  type DirectorResult,
 } from './data'
 import './App.css'
 
@@ -252,7 +253,70 @@ function ProductionDecision({ segments, summary }: { segments: Segment[]; summar
   )
 }
 
-// ── 4. Creator Task Cards ──
+// ── 4. AI Director Layer ──
+function AIDirectorLayer({ director, segments }: { director: DirectorResult | null; segments: Segment[] }) {
+  if (!director || director.transitions.length === 0) {
+    return null
+  }
+
+  const transitionIcons = {
+    cut: '✂️',
+    fade: '🌫️',
+    dissolve: '✨',
+    match_cut: '🎬'
+  }
+
+  return (
+    <div className="section">
+      <div className="section-header">
+        <div className="section-number">3.5</div>
+        <div className="section-title">AI Director — Transition Analysis</div>
+      </div>
+      <div className="card" style={{ padding: 24 }}>
+        <div className="director-flow">
+          <strong>Overall Flow:</strong> {director.overallFlow}
+        </div>
+        {director.recommendations.length > 0 && (
+          <div className="director-recommendations">
+            {director.recommendations.map((rec, i) => (
+              <div key={i} className="director-rec">{rec}</div>
+            ))}
+          </div>
+        )}
+        <div className="transition-list">
+          {director.transitions.map((t, i) => {
+            const fromSeg = segments[i]
+            const toSeg = segments[i + 1]
+            return (
+              <div key={i} className="transition-card">
+                <div className="transition-header">
+                  <span className="transition-icon">{transitionIcons[t.transitionType]}</span>
+                  <span className="transition-type">{t.transitionType.replace('_', ' ').toUpperCase()}</span>
+                  {t.durationMs > 0 && <span className="transition-duration">{t.durationMs}ms</span>}
+                </div>
+                <div className="transition-segments">
+                  <span className="transition-from">{fromSeg?.role}</span>
+                  <span className="transition-arrow">→</span>
+                  <span className="transition-to">{toSeg?.role}</span>
+                </div>
+                <div className="transition-reasoning">{t.reasoning}</div>
+                {t.continuityNotes.length > 0 && (
+                  <div className="transition-notes">
+                    {t.continuityNotes.map((note, j) => (
+                      <div key={j} className="transition-note">• {note}</div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ── 5. Creator Task Cards ──
 function CreatorTaskCards({ tasks }: { tasks: CreatorTask[] }) {
   const [expanded, setExpanded] = useState<number | null>(null)
 
@@ -408,6 +472,7 @@ function App() {
   const displayTasks = transformed?.creatorTasks ?? mockTasks
   const displaySummary = transformed?.summary ?? mockSummary
   const videoInfo = transformed?.videoInfo ?? null
+  const director = result?.director ?? null
 
   const handleFileSelected = useCallback((file: File) => {
     setVideoFile(file)
@@ -467,6 +532,8 @@ function App() {
       <FlowConnector />
       <ProductionDecision segments={displaySegments} summary={displaySummary} />
       <FlowConnector />
+      <AIDirectorLayer director={director} segments={displaySegments} />
+      {director && <FlowConnector />}
       <CreatorTaskCards tasks={displayTasks} />
       <FlowConnector />
       <FinalOutput segments={displaySegments} summary={displaySummary} />

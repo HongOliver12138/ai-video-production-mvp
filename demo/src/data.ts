@@ -168,6 +168,21 @@ export interface Summary {
   status: string
 }
 
+export interface TransitionAnalysis {
+  fromSegment: string
+  toSegment: string
+  transitionType: 'cut' | 'fade' | 'dissolve' | 'match_cut'
+  durationMs: number
+  reasoning: string
+  continuityNotes: string[]
+}
+
+export interface DirectorResult {
+  transitions: TransitionAnalysis[]
+  overallFlow: string
+  recommendations: string[]
+}
+
 export interface PipelineResult {
   decomposition: any
   judgment: any
@@ -175,6 +190,7 @@ export interface PipelineResult {
   brief: any
   package: any
   renderSpec: any
+  director?: DirectorResult
   meta: { filename: string; fileSize: number; processedAt: string }
 }
 

@@ -31,6 +31,7 @@ import type { DecompositionProvider } from '../../视频拆解/video-decompositi
 
 // Proxy-compatible provider (uses fetch + Bearer auth)
 import { GeminiProxyProvider } from './gemini-proxy-provider.js'
+import { analyzeTransitions } from './director.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const TMP_DIR = path.join(__dirname, 'tmp')
@@ -134,9 +135,14 @@ app.post('/api/decompose', upload.single('video'), async (req, res) => {
     const tasks = buildCaptureTasks(recommendation, brief)
 
     // Step 3: Package → Render Spec
-    console.log('⏳ Step 3/3: Assembling package...')
+    console.log('⏳ Step 3/4: Assembling package...')
     const pkg = buildProductionPackage(recommendation, brief, tasks)
     const renderSpec = buildRenderSpec(pkg)
+
+    // Step 4: AI Director - Analyze transitions
+    console.log('⏳ Step 4/4: AI Director analyzing transitions...')
+    const director = await analyzeTransitions(decomposition.segments, provider)
+    console.log(`✅ Director: ${director.transitions.length} transitions analyzed`)
 
     console.log('🎉 Full pipeline complete!')
 
@@ -147,6 +153,7 @@ app.post('/api/decompose', upload.single('video'), async (req, res) => {
       brief,
       package: pkg,
       renderSpec,
+      director,
       meta: {
         filename: file.originalname,
         fileSize: file.size,
